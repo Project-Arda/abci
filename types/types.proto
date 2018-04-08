@@ -65,6 +65,10 @@ message RequestBeginBlock {
   repeated Evidence byzantine_validators = 4 [(gogoproto.nullable)=false];
 }
 
+message RequestBuildBlock {
+  repeated bytes transactions = 1;
+}
+
 message RequestCheckTx {
   bytes tx = 1;
 }
@@ -143,6 +147,10 @@ message ResponseQuery {
 }
 
 message ResponseBeginBlock {
+}
+
+message ResponseBuildBlock {
+  repeated bytes transactions = 1;
 }
 
 message ResponseCheckTx {
